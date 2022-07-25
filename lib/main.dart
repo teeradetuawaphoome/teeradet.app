@@ -34,20 +34,20 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("กดเลย"),
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("กดปุ่มเพื่อเพิ่มจำนวนตัวเลข"),
-          Text(
-            "$number",
-            style: TextStyle(fontSize: 60),
-          ),
-        ],
-      )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text("กด"),
+        child: ListView(
+          children: getData(15),
+        ),
       ),
     );
+  }
+
+  List<Widget> getData(int count) {
+    //กลุ่มข้อมูล
+    List<Widget> data = [];
+
+    for (var i = 0; i < count; i++) {
+      data.add(Text("รายการที่ ${i + 1}"));
+    }
+    return data;
   }
 }
